@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Button } from 'reactstrap';
 import './custom.scss';
 // import Hello  from './Components/Hello';
-// import Counter from './Components/Counter';
+import Counter from './Components/Counter';
 import Footer from './Components/Footer';
 import Clock from './Components/Clock';
 // import YouTube  from './Components/YouTube';
@@ -21,14 +21,14 @@ export function App() {
 
   return (
     <Container className='my-4'>
-      {/* <Hello />
-      <Counter init={5} /> */}
-      <Button
+      {/* <Hello /> */}
+      <Counter init={5} />
+      {/* <Button
         color={initialRender ? "primary" : (isClockVisible ? "success" : "danger")}
         onClick={toggleClock} >
         {isClockVisible ? "Hide" : "Show"} Clock
       </Button>
-      {isClockVisible && <Clock />}
+      {isClockVisible && <Clock />} */}
       <Footer />
     </Container>
   );
