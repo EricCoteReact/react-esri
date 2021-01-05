@@ -2,6 +2,9 @@ import React from 'react';
 import { Button, Input } from 'reactstrap';
 import MyButton from './MyButton';
 
+
+
+
 export class CounterClass extends React.Component {
   state = { count: this.props.init, name: 'Jason' };
 
