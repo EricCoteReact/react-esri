@@ -1,14 +1,10 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
-export default class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: props.init, name: 'Jason' };
-    this.increment = this.increment.bind(this);
-  }
+export class CounterClass extends React.Component {
+  state = { count: this.props.init, name: 'Jason' };
 
-  increment() {
+  increment = () => {
     this.setState({ count: this.state.count + 1 });
   }
 
@@ -23,4 +19,22 @@ export default class Counter extends React.Component {
       </div>
     );
   }
+}
+
+
+export default function Counter(props){
+    const [count, setCount] = React.useState(props.init);
+
+    function increment(){
+      setCount(count+1);
+    }
+
+    return (
+      <div>
+        <h1>The value is: {count}</h1>
+        <Button color='primary' onClick={increment}>
+          Increment
+        </Button>
+      </div>
+    );
 }
