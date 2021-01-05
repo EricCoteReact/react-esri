@@ -7,6 +7,7 @@ import Menu from './Components/Menu';
 import Home from './Home/Home';
 import About from './About/About';
 import Counter from './Counter/Counter';
+import Covid from './Covid/Covid';
 // import YouTube  from './Components/YouTube';
 
 
@@ -20,6 +21,7 @@ export function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/counter/:init" component={Counter} />
+          <Route path="/covid" component={Covid} />
         </Switch>
         <Footer />
       </Container>
