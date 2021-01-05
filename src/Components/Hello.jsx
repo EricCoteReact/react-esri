@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Hello({ fname, children: lname }) {
+export default function Hello({ fname, children: lname }) {
   return (
     <h1>
       Hello {fname} {lname} (jsx)

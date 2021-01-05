@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function YouTube(props) {
+export default function YouTube(props) {
   return (
     <iframe
       type='text/html'
