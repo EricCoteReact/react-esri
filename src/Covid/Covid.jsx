@@ -9,6 +9,7 @@ export default function Covid() {
   const [countries, setCountries] = useState([]);
   const [isFetching, setFetching] = useState(false);
 
+  // eslint-disable-next-line
   function getDataPromises() {
     axios.get('https://corona.lmao.ninja/v2/countries?sort=cases')
       .then((resp) => setCountries(resp.data))
@@ -18,7 +19,7 @@ export default function Covid() {
   async function getData() {
     try {
       setFetching(true);
-      const resp = await axios.get('https://corona.lmao.ninja/v2/countrie?sort=cases');
+      const resp = await axios.get('https://corona.lmao.ninja/v2/countries?sort=cases');
       setCountries(resp.data);
     } catch (err) {
       console.log(err);
@@ -27,9 +28,7 @@ export default function Covid() {
     }
   }
 
-  useEffect(() => getData(), [])
-
-  console.log(countries);
+  useEffect(() => getData(), []);
 
   return (
     <div>
