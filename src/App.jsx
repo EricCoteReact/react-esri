@@ -10,16 +10,24 @@ import Clock from './Components/Clock';
 
 export function App() {
   const [isClockVisible, setClockVisible] = React.useState(false);
+  const [initialRender, setInitialRender] = React.useState(true);
+
 
   function toggleClock() {
     setClockVisible(!isClockVisible);
+    if (initialRender) setInitialRender(false);
   }
+
 
   return (
     <Container className='my-4'>
       {/* <Hello />
       <Counter init={5} /> */}
-      <Button onClick={toggleClock} >{isClockVisible ? "Hide" : "Show"} Clock</Button>
+      <Button
+        color={initialRender ? "primary" : (isClockVisible ? "success" : "danger")}
+        onClick={toggleClock} >
+        {isClockVisible ? "Hide" : "Show"} Clock
+      </Button>
       {isClockVisible && <Clock />}
       <Footer />
     </Container>
