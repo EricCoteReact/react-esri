@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Input } from 'reactstrap';
+import MyButton from './MyButton';
 
 export class CounterClass extends React.Component {
   state = { count: this.props.init, name: 'Jason' };
@@ -25,8 +26,8 @@ export class CounterClass extends React.Component {
 export default function Counter(props) {
   const [count, setCount] = React.useState(props.init);
 
-  function increment() {
-    setCount(count + 1);
+  function increment(incr) {
+    setCount(count + incr);
   }
 
   function change(evt) {
@@ -38,10 +39,10 @@ export default function Counter(props) {
   return (
     <div>
       <h1>The value is: {count}</h1>
-      <Input value={count} onChange={change} />
-      <Button color='primary' onClick={increment}>
-        Increment
-        </Button>
+      <Input className="mb-3" value={count} onChange={change} />
+      <MyButton increment={1} onIncrement={increment} />
+      <MyButton increment={10} onIncrement={increment} />
+      <MyButton increment={100} onIncrement={increment} />
     </div>
   );
 }
