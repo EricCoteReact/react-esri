@@ -19,7 +19,7 @@ export function App() {
     <Container className='my-4'>
       {/* <Hello />
       <Counter init={5} /> */}
-      <Button onClick={toggleClock} ></Button>
+      <Button onClick={toggleClock} >{isClockVisible ? "Hide" : "Show"} Clock</Button>
       {isClockVisible && <Clock />}
       <Footer />
     </Container>
