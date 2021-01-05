@@ -19,7 +19,7 @@ export function App() {
         <Switch >
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/counter" render={() => <Counter init={6} />} />
+          <Route path="/counter/:init" component={Counter} />
         </Switch>
         <Footer />
       </Container>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Input } from 'reactstrap';
 import MyButton from './MyButton';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -27,7 +28,8 @@ export class CounterClass extends React.Component {
 
 
 export default function Counter(props) {
-  const [count, setCount] = React.useState(props.init);
+  let { init } = useParams();
+  const [count, setCount] = React.useState(+init);
 
   function increment(incr) {
     setCount(count + incr);

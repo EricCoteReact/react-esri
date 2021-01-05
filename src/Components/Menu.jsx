@@ -29,7 +29,7 @@ const Menu = (props) => {
               <NavLink tag={RRNavLink} to="/about">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} to="/counter">Counter</NavLink>
+              <NavLink tag={RRNavLink} to="/counter/7">Counter</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
