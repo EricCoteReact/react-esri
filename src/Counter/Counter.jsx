@@ -44,7 +44,7 @@ export default function Counter(props) {
       <h1>The value is: {count}</h1>
       <Input className="mb-3" value={count} onChange={change} />
       <MyButton value={1} onIncrement={increment} />
-      <MyButton value={10} onIncrement={increment} />
+      <MyButton value={-10} onIncrement={increment} />
       <MyButton value={100} onIncrement={increment} />
     </div>
   );
