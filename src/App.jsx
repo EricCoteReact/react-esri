@@ -8,6 +8,7 @@ import Home from './Home/Home';
 import About from './About/About';
 import Counter from './Counter/Counter';
 import Covid from './Covid/Covid';
+import Contacts from './Contacts/Contacts';
 // import YouTube  from './Components/YouTube';
 
 
@@ -22,6 +23,7 @@ export function App() {
           <Route path="/about" component={About} />
           <Route path="/counter/:init" component={Counter} />
           <Route path="/covid" component={Covid} />
+          <Route path="/contacts" component={Contacts} />
         </Switch>
         <Footer />
       </Container>
