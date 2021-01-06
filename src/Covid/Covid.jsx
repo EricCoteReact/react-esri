@@ -11,7 +11,7 @@ export default function Covid() {
 
   // eslint-disable-next-line
   function getDataPromises() {
-    axios.get('https://corona.lmao.ninja/v2/countries?sort=cases')
+    axios.get('https://disease.sh/v3/covid-19/countries?sort=cases')
       .then((resp) => setCountries(resp.data))
       .catch((err) => console.log(err));
   }
@@ -19,7 +19,7 @@ export default function Covid() {
   async function getData() {
     try {
       setFetching(true);
-      const resp = await axios.get('https://corona.lmao.ninja/v2/countries?sort=cases');
+      const resp = await axios.get('https://disease.sh/v3/covid-19/countries?sort=cases');
       setCountries(resp.data);
     } catch (err) {
       console.log(err);
@@ -38,7 +38,7 @@ export default function Covid() {
         <div>
           <Spinner color="primary" />
         </div> :
-        <Table dark striped>
+        <Table dark striped hover>
           <thead>
             <tr>
               <th>Name</th>
@@ -50,7 +50,7 @@ export default function Covid() {
           </thead>
           <tbody>
             {countries.map(country =>
-              <tr key={country.country}>
+              <tr key={country.country} style={{ cursor: "pointer" }} onClick={() => alert("wow")}  >
                 <td>{country.country}</td>
                 <td><img
                   src={country.countryInfo.flag}
