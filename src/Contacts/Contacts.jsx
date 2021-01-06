@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'reactstrap';
+import { ContactTable } from './ContactTable';
 
 export default function Contacts() {
   const [contacts, setContacts] = useState([])
@@ -17,15 +17,9 @@ export default function Contacts() {
   return (
     <div>
       <h1>List of contacts</h1>
-      <Table dark striped>
-        <tbody>
-          {contacts.map((contact) =>
-            <tr key={contact.id}>
-              <td>{contact.firstName}</td>
-              <td>{contact.lastName}</td>
-            </tr>)}
-        </tbody>
-      </Table>
+      <ContactTable contacts={contacts} isFetching={isFetching} />
     </div>
   )
 }
+
+
