@@ -14,10 +14,16 @@ export default function Contacts() {
     getData();
   }, []);
 
+
+  async function deleteContact(id) {
+    await fetch("http://localhost:3001/contacts/" + id, { method: "DELETE" });
+    getData();
+  }
+
   return (
     <div>
       <h1>List of contacts</h1>
-      <ContactTable contacts={contacts} isFetching={isFetching} />
+      <ContactTable contacts={contacts} onDelete={deleteContact} />
     </div>
   )
 }
