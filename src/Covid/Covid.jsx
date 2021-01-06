@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Table, Button, Spinner } from 'reactstrap';
+import { MyMap } from './MyMap';
 
 const format = Intl.NumberFormat("en-US").format;
 
 
 export default function Covid() {
+  const [selectedCountry, setSelectedCountry] = useState(null);
   const [countries, setCountries] = useState([]);
   const [isFetching, setFetching] = useState(false);
 
@@ -34,6 +36,9 @@ export default function Covid() {
     <div>
       <h1>Covid Cases</h1>
       <Button color="primary" className="my-3" onClick={getData} >Refresh Data</Button>
+      <MyMap
+        lat={selectedCountry?.countryInfo.lat}
+        long={selectedCountry?.countryInfo.long} />
       { isFetching ?
         <div>
           <Spinner color="primary" />
@@ -50,7 +55,10 @@ export default function Covid() {
           </thead>
           <tbody>
             {countries.map(country =>
-              <tr key={country.country} style={{ cursor: "pointer" }} onClick={() => alert("wow")}  >
+              <tr key={country.country}
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedCountry(country)}
+                className={country === selectedCountry ? 'bg-primary' : ''}  >
                 <td>{country.country}</td>
                 <td><img
                   src={country.countryInfo.flag}
